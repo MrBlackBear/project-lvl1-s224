@@ -1,24 +1,20 @@
 import { cons } from 'hexlet-pairs';
-import game from './engine';
-
-const randomBigNumber = () => 10 + Math.floor(Math.random() * 21);
-const randomNumber = () => Math.floor(Math.random() * 11);
+import game from '..';
+import randomNumber from '../random';
 
 const rules = 'What is the result of the expression?';
 
 const randomAction = () => {
-  const numberFromOnetoThree = Math.floor(Math.random() * 4);
-  if (numberFromOnetoThree <= 1) {
-    return '-';
-  } else if (numberFromOnetoThree === 2) {
-    return '+';
+  switch (Math.floor(Math.random() * 4)) {
+    case 2: return '+';
+    case 3: return '*';
+    default: return '-';
   }
-  return '*';
 };
 
 const pairQA = () => {
-  const firstNumber = randomBigNumber();
-  const secondNumber = randomNumber();
+  const firstNumber = randomNumber(1, 99);
+  const secondNumber = randomNumber(1, 10);
   const randAction = randomAction();
   const question = `${firstNumber}${randAction}${secondNumber}`;
   let answer;
@@ -31,7 +27,7 @@ const pairQA = () => {
       break;
     default: break;
   }
-  return cons(question, answer);
+  return cons(question, String(answer));
 };
 
 const calcGame = () => game(rules, pairQA);

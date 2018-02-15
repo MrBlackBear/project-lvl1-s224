@@ -19,7 +19,7 @@ const pairQA = () => {
   const firstNumber = randomNumber(1, 50);
   const difference = randomNumber(1, 10);
   const rand = randomNumber(0, 9);
-  const progression = makeProgression(firstNumber, difference)
+  const progression = makeProgression(firstNumber, difference);
   const answer = progression[rand];
   progression[rand] = '..';
   const question = progression.join(' ');

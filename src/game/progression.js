@@ -8,7 +8,7 @@ const makeProgression = (firstNumber, diff) => {
   const progression = [];
   progression.push(firstNumber);
   let fNumber = firstNumber;
-  for (let i = 0; i < 9; i++) {
+  for (let i = 0; i < 9; i += 1) {
     fNumber += diff;
     progression.push(fNumber);
   }

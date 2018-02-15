@@ -11,11 +11,9 @@ const isPrime = (number) => {
   return true;
 };
 
-const YES = 'yes';
-const NO = 'no';
 const rules = 'Is this number prime?';
 
-const makeAnswer = question => (isPrime(question) ? YES : NO);
+const makeAnswer = question => (isPrime(question) ? 'yes' : 'no');
 
 const pairQA = () => {
   const question = randomNumber(1, 199);

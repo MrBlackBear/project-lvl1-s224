@@ -4,11 +4,9 @@ import randomNumber from '../random';
 
 const isEven = number => number % 2 === 0;
 
-const YES = 'yes';
-const NO = 'no';
 const rules = 'Answer "yes" if number even otherwise answer "no".';
 
-const makeAnswer = question => (isEven(question) ? YES : NO);
+const makeAnswer = question => (isEven(question) ? 'yes' : 'no');
 
 const pairQA = () => {
   const question = randomNumber(1, 99);
